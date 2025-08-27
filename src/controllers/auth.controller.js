@@ -8,13 +8,17 @@ export const AuthController = {
       res.status(201).json(user);
     } catch (e) { next(e); }
   },
+
   login: async (req, res, next) => {
     try {
-      const result = await AuthService.login(req.body);
-      res.json(result);
+      const { token, user } = await AuthService.login(req.body);
+      // só o necessário
+      res.json({ token, username: user.username, role: user.role });
     } catch (e) { next(e); }
   },
+
   me: async (req, res) => {
-    res.json({ user: req.user });
+    // o payload do JWT já tem username/role
+    res.json({ username: req.user.username, role: req.user.role });
   }
 };

@@ -29,6 +29,5 @@ export const AuthService = {
       { expiresIn: process.env.JWT_EXPIRES || '1d' }
     );
 
-    return { token, user: { id: user.id, username: user.username, full_name: user.full_name, role: user.role } };
-  }
+return { token, username: user.username, role: user.role };  }
 };
