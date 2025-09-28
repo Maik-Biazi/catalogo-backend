@@ -132,7 +132,7 @@ export async function seed(knex) {
         ...product,
         id: crypto.randomUUID(), // opcional, se seu banco não gera UUID automaticamente
       })
-      .onConflict('name') // evita duplicação
+      .onConflict('id') 
       .ignore();
   }
 
