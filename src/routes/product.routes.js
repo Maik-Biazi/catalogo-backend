@@ -7,11 +7,13 @@ import { requireAuth, requireRole } from '../middlewares/auth.js';
 
 const r = Router();
 
-r.get('/', requireAuth, validate(listQuerySchema.extend({
-  query: listQuerySchema.shape.query.extend({
-    category_id: listQuerySchema.shape.query.shape.q.transform(() => undefined).optional()
-  })
-})), ProductController.list);
+// Rota pública: listar produtos
+r.get(
+  '/',
+  validate(listQuerySchema),
+  ProductController.list
+);
+
 
 r.post('/', requireAuth, requireRole('ADMIN'), validate(createProductSchema), ProductController.create);
 r.get('/:id', requireAuth, validate(idParamSchema), ProductController.get);

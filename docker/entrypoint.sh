@@ -2,7 +2,12 @@
 set -e
 
 echo "[entrypoint] aguardando DB..."
-sleep 2
+
+# espera o banco ficar pronto
+until nc -z $PG_HOST $PG_PORT; do
+  echo "Aguardando banco $PG_HOST:$PG_PORT..."
+  sleep 2
+done
 
 echo "[entrypoint] knex migrate:latest"
 npm run migrate

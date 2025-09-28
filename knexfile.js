@@ -28,7 +28,7 @@ if (process.env.DATABASE_URL) {
     user: required('PG_USER'),
     password: required('PG_PASSWORD'),
     database: required('PG_DATABASE'),
-    ssl: { rejectUnauthorized: false }, 
+    ssl: useSsl ? { rejectUnauthorized: false } : false,
     application_name: process.env.PG_APP_NAME || 'catalogo-backend',
     connectionTimeoutMillis: Number(process.env.PG_CONNECT_TIMEOUT || 10000),
   };
