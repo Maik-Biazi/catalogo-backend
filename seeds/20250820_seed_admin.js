@@ -8,7 +8,7 @@ export const seed = async (knex) => {
   await knex('users') 
     .insert({
       username: 'admin',
-      full_name: 'Administrador',
+      full_name: 'Administrador', 
       password_hash,
       role: 'ADMIN'
     })
