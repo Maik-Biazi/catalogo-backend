@@ -3,10 +3,10 @@
  * @returns { Promise<void> }
  */
 export async function seed(knex) {
-  // if (process.env.NODE_ENV !== "development") {
-  //   console.log("Seed pulado: não estamos em ambiente de desenvolvimento");
-  //   return;
-  // }
+  if (process.env.NODE_ENV !== "development") {
+    console.log("Seed pulado: não estamos em ambiente de desenvolvimento");
+    return;
+  }
 
   const now = new Date();
 
