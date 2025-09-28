@@ -5,7 +5,7 @@ export const seed = async (knex) => {
   const saltRounds = Number(process.env.BCRYPT_SALT) || 10;
   const password_hash = await bcrypt.hash('Admin#123', saltRounds);
 
-  await knex('users')
+  await knex('users') 
     .insert({
       username: 'admin',
       full_name: 'Administrador',
