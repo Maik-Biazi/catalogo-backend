@@ -1,4 +1,3 @@
-// src/repositories/product.repo.js
 import db from '../db/knex.js';
 
 export const ProductRepo = {

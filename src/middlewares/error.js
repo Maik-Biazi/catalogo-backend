@@ -1,4 +1,3 @@
-// src/middlewares/error.js
 export function errorHandler(err, req, res, _next) {
   const status = err.status || 500;
   const payload = {

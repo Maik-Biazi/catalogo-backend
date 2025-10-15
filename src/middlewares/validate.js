@@ -1,4 +1,3 @@
-// src/middlewares/validate.js
 export const validate =
   (schema) =>
   (req, _res, next) => {
