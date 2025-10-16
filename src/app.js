@@ -1,4 +1,3 @@
-// src/app.js
 import express from "express";
 import "dotenv/config";
 import routes from "./routes/index.js";
@@ -9,6 +8,7 @@ app.use(express.json());
 
 
 app.get("/health", (_req, res) => res.json({ status: "ok" }));
+app.get("/", (_req, res) => res.json({ status: "rota principal" }));
 app.use("/api", routes);
 
 app.use(notFound);

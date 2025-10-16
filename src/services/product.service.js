@@ -1,4 +1,3 @@
-// src/services/product.service.js
 import { ProductRepo } from '../repositories/product.repo.js';
 
 export const ProductService = {
