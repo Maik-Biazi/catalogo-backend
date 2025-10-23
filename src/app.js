@@ -8,7 +8,6 @@ app.use(express.json());
 
 
 app.get("/health", (_req, res) => res.json({ status: "ok" }));
-app.get("/", (_req, res) => res.json({ status: "rota principal" }));
 app.use("/api", routes);
 
 app.use(notFound);
