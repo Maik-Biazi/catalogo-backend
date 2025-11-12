@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 FROM public.ecr.aws/docker-library/node:20-alpine
-=======
-FROM node:20-alpine
->>>>>>> 0da40e17b0f7f865fc892123bfacd1386a829d44
 WORKDIR /app
 
 COPY package*.json ./
